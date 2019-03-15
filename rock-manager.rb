@@ -16,7 +16,7 @@ class RockManager < Formula
       s.gsub! "/usr/share/rock", share
       s.gsub! "getopt", "$(brew --prefix gnu-getopt)/bin/getopt"
     end
-    inreplace Dir["playbooks/*.yml"] do |s|
+    inreplace ["playbooks/auth-mgmt.yml", "playbooks/deploy-rock.yml", "playbooks/generate-defaults.yml", "playbooks/manage-services.yml", "playbooks/delete-data.yml"] do |s|
       s.gsub! "/etc/rocknsm", etc
     end
     inreplace "playbooks/generate-defaults.yml" do |s|
