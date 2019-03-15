@@ -30,8 +30,6 @@ class RockManager < Formula
   end
 
   test do
-    head "https://github.com/rocknsm/rock.git", :branch => "devel"
-
     system "rock", "help"
     system "rock", "genconfig"
   end
