@@ -18,6 +18,8 @@ class RockManager < Formula
       s.gsub! "/etc/rocknsm", etc
     end
 
+    raise 'test'
+
     bin.install "bin/rock"
     etc.install "etc/hosts.ini"
     share.install Dir["playbooks/"]
