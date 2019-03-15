@@ -20,6 +20,7 @@ class RockManager < Formula
       s.gsub! "/etc/rocknsm", etc
     end
     inreplace "playbooks/generate-defaults.yml" do |s|
+      s.gsub! "localhost", "localhost\n  become: false\n"
       s.gsub! "owner:", "#owner:"
       s.gsub! "group:", "#group:"
     end
