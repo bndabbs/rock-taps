@@ -11,11 +11,11 @@ class RockManager < Formula
 
   def install
     inreplace "bin/rock" do |s|
-      s.gsub "/etc/rocknsm", etc
-      s.gsub "/usr/share/rock", share
+      s.gsub! "/etc/rocknsm", etc
+      s.gsub! "/usr/share/rock", share
     end
     inreplace ["playbooks/deploy-rock.yml", "playbooks/generate-defaults.yml"] do |s|
-      s.gsub "/etc/rocknsm", etc
+      s.gsub! "/etc/rocknsm", etc
     end
 
     bin.install "bin/rock"
