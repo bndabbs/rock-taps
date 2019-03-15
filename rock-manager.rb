@@ -10,11 +10,6 @@ class RockManager < Formula
   depends_on "ansible"
 
   def install
-    bin.install "bin/rock"
-    share.install Dir["playbooks/"]
-    share.install Dir["roles/"]
-    etc.install "etc/hosts.ini"
-
     inreplace "bin/rock" do |s|
       s.gsub "/etc/rocknsm", etc
       s.gsub "/usr/share/rock", share
@@ -22,6 +17,12 @@ class RockManager < Formula
     inreplace ["playbooks/deploy-rock.yml", "playbooks/generate-defaults.yml"] do |s|
       s.gsub "/etc/rocknsm", etc
     end
+
+    bin.install "bin/rock"
+    etc.install "etc/hosts.ini"
+    share.install Dir["playbooks/"]
+    share.install Dir["roles/"]
+
   end
 
   test do
