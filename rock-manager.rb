@@ -32,7 +32,7 @@ class RockManager < Formula
   test do
     head "https://github.com/rocknsm/rock.git", :branch => "devel"
 
-    system bin/"rock", "help"
-    system bin/"rock", "genconfig"
+    system "rock", "help"
+    system "rock", "genconfig"
   end
 end
