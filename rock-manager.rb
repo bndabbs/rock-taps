@@ -8,11 +8,13 @@ class RockManager < Formula
   sha256 "0509e1932ada8193e27ed3945320124346b1030af30cdcf61d30f5c97fda60a1"
   head "https://github.com/rocknsm/rock.git", :branch => "devel"
   depends_on "ansible"
+  depends_on "gnu-getopt"
 
   def install
     inreplace "bin/rock" do |s|
       s.gsub! "/etc/rocknsm", etc
       s.gsub! "/usr/share/rock", share
+      s.gsub! "getopt", "$(brew --prefix gnu-getopt)/bin/getopt"
     end
     inreplace ["playbooks/deploy-rock.yml", "playbooks/generate-defaults.yml"] do |s|
       s.gsub! "/etc/rocknsm", etc
