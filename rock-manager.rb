@@ -4,6 +4,8 @@
 class RockManager < Formula
   desc "Rock-Manager: Manage RockNSM deployments from MacOS"
   homepage "https://rocknsm.io/"
+  url "https://github.com/rocknsm/rock/archive/rock-2.3.0-1.tar.gz"
+  sha256 "0509e1932ada8193e27ed3945320124346b1030af30cdcf61d30f5c97fda60a1"
   head "https://github.com/rocknsm/rock.git", :tag => "rock-2.3.0-1", :revision => "0c3511f40a5e4b62ee7d9855edc9e13e197a4a5d"
   depends_on "ansible"
 
