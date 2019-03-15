@@ -13,7 +13,7 @@ class RockManager < Formula
     bin.install "bin/rock"
     share.install Dir["playbooks/"]
     share.install Dir["roles/"]
-    etc.install "/etc/hosts.ini"
+    etc.install "etc/hosts.ini"
 
     inreplace "bin/rock" do |s|
       s.gsub "/etc/rocknsm", etc
