@@ -18,6 +18,8 @@ class RockManager < Formula
     end
     inreplace ["playbooks/deploy-rock.yml", "playbooks/generate-defaults.yml"] do |s|
       s.gsub! "/etc/rocknsm", etc
+      s.gsub! "owner:", "#owner:"
+      s.gsub! "group:", "#group:"
     end
 
     bin.install "bin/rock"
