@@ -5,7 +5,12 @@
 This is a [Tap](https://docs.brew.sh/Taps) containing some [Homebrew](http://brew.sh/) formulas for RockNSM.
 
 ## Formulas
-**Rock-Manager**: Provides `rock` command for managing RockNSM deployments
+
+Formula  | Description
+--|---
+**Ansible**  |  Updates homebrew-core/ansible to use cryptography-2.4.2
+**Rock-Manager**  |  Provides `rock` command for managing RockNSM deployments
+
 
 ## Installation
 
