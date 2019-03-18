@@ -4,7 +4,7 @@ class RockManager < Formula
   url "https://github.com/rocknsm/rock/archive/rock-2.3.0-1.tar.gz"
   sha256 "0509e1932ada8193e27ed3945320124346b1030af30cdcf61d30f5c97fda60a1"
   head "https://github.com/rocknsm/rock.git", :branch => "devel"
-  depends_on "rocknsm/ansible"
+  depends_on "rocknsm/taps/ansible"
   depends_on "gnu-getopt"
 
   def install
