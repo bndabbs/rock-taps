@@ -21,6 +21,10 @@ class RockManager < Formula
       s.gsub! "owner:", "#owner:"
       s.gsub! "group:", "#group:"
     end
+    inreplace "playbooks/ansible.cfg" do |s|
+      s.gsub! "/etc/rocknsm", etc
+      s.gsub! "/usr/share/rock", share
+    end
 
     bin.install "bin/rock"
     etc.install "etc/hosts.ini"
