@@ -13,9 +13,7 @@ class RockManager < Formula
       s.gsub! "/usr/share/rock", share
       s.gsub! "getopt", "$(brew --prefix gnu-getopt)/bin/getopt"
     end
-    inreplace ["playbooks/auth-mgmt.yml", "playbooks/deploy-rock.yml", "playbooks/generate-defaults.yml", "playbooks/manage-services.yml", "playbooks/delete-data.yml"] do |s|
-      s.gsub! "/etc/rocknsm", etc
-    end
+    inreplace "playbooks/group_vars/all.yml", "/etc/rocknsm", etc
     inreplace "playbooks/generate-defaults.yml" do |s|
       s.gsub! "localhost", "localhost\n  become: false"
       s.gsub! "owner:", "#owner:"
